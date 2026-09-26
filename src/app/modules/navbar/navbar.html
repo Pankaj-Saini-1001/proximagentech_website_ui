@@ -1,0 +1,123 @@
+<header
+  class="navbar-root"
+  [class.scrolled]="isScrolled()"
+>
+  <div class="navbar-wrapper">
+    <!-- Left Pod: Logo Capsule (Logo image only, no company text) -->
+    <div class="nav-pod nav-pod--logo">
+      <a
+        routerLink="/"
+        class="logo-link clickable"
+        (click)="handleLogoClick($event)"
+        aria-label="ProximaGenTech - Home"
+      >
+        <img
+          src="assets/brand/logo.webp"
+          alt="ProximaGenTech"
+          class="navbar-logo-img"
+        />
+      </a>
+    </div>
+
+    <!-- Center Pod: Nav Links Capsule (Home, Services, Solutions, About) -->
+    <nav class="nav-pod nav-pod--center" aria-label="Main Navigation">
+      <ul class="nav-links-list">
+        @for (item of navItems; track item.label) {
+          <li class="nav-item">
+            <a
+              [routerLink]="item.route"
+              class="nav-link clickable"
+              (click)="handleNavClick(item, $event)"
+            >
+              {{ item.label }}
+            </a>
+          </li>
+        }
+      </ul>
+    </nav>
+
+    <!-- Right Pod: "Get In Touch ↗" Capsule Button + Mobile Hamburger -->
+    <div class="nav-pod nav-pod--right">
+      <a
+        routerLink="/contact-us"
+        class="cta-capsule-btn clickable"
+        (click)="handleGetInTouch($event)"
+      >
+        <span class="cta-text">Get In Touch</span>
+        <span class="cta-arrow-box" aria-hidden="true">
+          <span class="cta-arrow-glyph primary-arrow">&#x2197;</span>
+          <span class="cta-arrow-glyph clone-arrow">&#x2197;</span>
+        </span>
+      </a>
+
+      <!-- Mobile Hamburger Toggle (Visible on screens <= 768px) -->
+      <button
+        type="button"
+        class="mobile-toggle-btn clickable"
+        (click)="toggleMobileMenu()"
+        [attr.aria-expanded]="isMobileMenuOpen()"
+        aria-label="Toggle navigation menu"
+      >
+        <span class="hamburger-icon" [class.is-open]="isMobileMenuOpen()">
+          <span></span>
+          <span></span>
+          <span></span>
+        </span>
+      </button>
+    </div>
+  </div>
+
+  <!-- Mobile Drawer / Sheet (Below 768px) -->
+  @if (isMobileMenuOpen()) {
+    <div class="mobile-drawer-backdrop" (click)="closeMobileMenu()"></div>
+    <div class="mobile-drawer-sheet" role="dialog" aria-modal="true" aria-label="Mobile Navigation">
+      <div class="drawer-top-bar">
+        <div class="drawer-brand">
+          <img src="assets/brand/logo.webp" alt="ProximaGenTech" class="drawer-logo-img" />
+        </div>
+        <button
+          type="button"
+          class="drawer-close-btn clickable"
+          (click)="closeMobileMenu()"
+          aria-label="Close menu"
+        >
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+
+      <nav class="drawer-nav">
+        <ul class="drawer-nav-list">
+          @for (item of navItems; track item.label) {
+            <li class="drawer-nav-item">
+              <a
+                [routerLink]="item.route"
+                class="drawer-nav-link clickable"
+                (click)="handleNavClick(item, $event)"
+              >
+                <span>{{ item.label }}</span>
+                <span class="drawer-arrow">&#x2197;</span>
+              </a>
+            </li>
+          }
+        </ul>
+      </nav>
+
+      <div class="drawer-footer-cta">
+        <a
+          routerLink="/contact-us"
+          class="drawer-cta-btn clickable"
+          (click)="handleGetInTouch($event)"
+        >
+          <span>Get In Touch</span>
+          <span class="cta-arrow-box" aria-hidden="true">
+            <span class="cta-arrow-glyph primary-arrow">&#x2197;</span>
+            <span class="cta-arrow-glyph clone-arrow">&#x2197;</span>
+          </span>
+        </a>
+      </div>
+    </div>
+  }
+</header>

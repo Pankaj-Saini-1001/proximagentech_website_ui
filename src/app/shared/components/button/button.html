@@ -1,0 +1,49 @@
+@if (routerLink()) {
+  <a
+    [routerLink]="routerLink()"
+    [class]="'app-btn btn-' + variant() + ' size-' + size()"
+    [class.btn-full]="fullWidth()"
+    [class.btn-disabled]="disabled() || loading()"
+    (click)="handleClick($event)"
+  >
+    @if (loading()) {
+      <span class="btn-spinner" aria-hidden="true"></span>
+    }
+    <ng-content select="[slot=icon-left]"></ng-content>
+    <span class="btn-content"><ng-content></ng-content></span>
+    <ng-content select="[slot=icon-right]"></ng-content>
+  </a>
+} @else if (href()) {
+  <a
+    [href]="href()"
+    [target]="target()"
+    [rel]="target() === '_blank' ? 'noopener noreferrer' : null"
+    [class]="'app-btn btn-' + variant() + ' size-' + size()"
+    [class.btn-full]="fullWidth()"
+    [class.btn-disabled]="disabled() || loading()"
+    (click)="handleClick($event)"
+  >
+    @if (loading()) {
+      <span class="btn-spinner" aria-hidden="true"></span>
+    }
+    <ng-content select="[slot=icon-left]"></ng-content>
+    <span class="btn-content"><ng-content></ng-content></span>
+    <ng-content select="[slot=icon-right]"></ng-content>
+  </a>
+} @else {
+  <button
+    [type]="type()"
+    [disabled]="disabled() || loading()"
+    [class]="'app-btn btn-' + variant() + ' size-' + size()"
+    [class.btn-full]="fullWidth()"
+    [class.btn-disabled]="disabled() || loading()"
+    (click)="handleClick($event)"
+  >
+    @if (loading()) {
+      <span class="btn-spinner" aria-hidden="true"></span>
+    }
+    <ng-content select="[slot=icon-left]"></ng-content>
+    <span class="btn-content"><ng-content></ng-content></span>
+    <ng-content select="[slot=icon-right]"></ng-content>
+  </button>
+}

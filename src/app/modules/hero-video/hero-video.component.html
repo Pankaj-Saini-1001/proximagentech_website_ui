@@ -1,0 +1,166 @@
+<section class="hero-video" #heroSection id="hero">
+  <!-- Sticky / Pinned Viewport Container -->
+  <div class="hero-video__sticky" #heroSticky>
+    <!-- Visual Media Container (Background Hero Video) -->
+    <div class="hero-video__media-wrapper" #mediaWrapper>
+      <video
+        #videoPlayer
+        class="hero-video__media"
+        src="assets/videos/header1.mp4"
+        poster="assets/images/hero/hero-placeholder.webp"
+        autoplay
+        muted
+        loop
+        playsinline
+        preload="auto"
+        aria-hidden="true"
+      ></video>
+      <!-- Subtle Brand/Dark Ambient Overlay -->
+      <div class="hero-video__overlay"></div>
+    </div>
+
+    <!-- Centered Hero Multi-Phase Animation Stage -->
+    <div class="hero-video__content" #heroContent>
+      <!-- Phase 1: Next-Gen Engineering -->
+      <div class="hero-phase hero-phase--1" #phase1>
+        <div class="hero-pill-badge" #badge1>
+          <svg class="pill-spark" width="12" height="12" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><polygon points="12 2 15 9 22 12 15 15 12 22 9 15 2 12 9 9"/></svg>
+          <span>Next-Gen Engineering</span>
+        </div>
+        <h1 class="hero-headline hero-headline--1" #headline1>
+          From Concept <br />
+          <span class="text-brand-green">To Code.</span>
+        </h1>
+      </div>
+
+      <!-- Phase 2: Autonomous Agents & Apps (Masked Kinetic Word Slide) -->
+      <div class="hero-phase hero-phase--2" #phase2>
+        <div class="hero-pill-badge" #badge2>
+          <svg class="pill-spark" width="12" height="12" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><polygon points="12 2 15 9 22 12 15 15 12 22 9 15 2 12 9 9"/></svg>
+          <span>Autonomous Agents &amp; Apps</span>
+        </div>
+        <h1 class="hero-headline hero-headline--2" #headline2>
+          <span class="line-row">
+            <span class="word-mask"><span class="word">Engineering</span></span>
+            <span class="word-mask"><span class="word text-lavender">Agentic</span></span>
+            <span class="word-mask"><span class="word text-lavender">AI</span></span>
+          </span>
+          <span class="line-row">
+            <span class="word-mask"><span class="word">&amp;</span></span>
+            <span class="word-mask"><span class="word">Custom</span></span>
+            <span class="word-mask"><span class="word text-brand-green">Software.</span></span>
+          </span>
+        </h1>
+      </div>
+
+      <!-- Phase 3: Your Vision Realized (Focus Expansion & CTA Reveal) -->
+      <div class="hero-phase hero-phase--3" #phase3>
+        <div class="hero-pill-badge" #badge3>
+          <svg class="pill-spark" width="12" height="12" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><polygon points="12 2 15 9 22 12 15 15 12 22 9 15 2 12 9 9"/></svg>
+          <span>Your Vision Realized</span>
+        </div>
+        <h1 class="hero-headline hero-headline--3" #headline3>
+          Have an Idea in Mind? <br />
+          <span class="text-brand-green">Let’s Make It Real.</span>
+        </h1>
+        <p class="hero-subtitle" #subtitle3>
+          Web, mobile, desktop apps, and autonomous agents engineered to scale your business.
+        </p>
+        <div class="hero-cta-wrapper" #ctaWrapper3>
+          <a class="hero-cta-btn" (click)="scrollToNext($event)" role="button" tabindex="0">
+            <span>Start Your Project</span>
+            <span class="cta-arrow" aria-hidden="true">&rarr;</span>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Visual Timeline Progress Slots -->
+    <div class="hero-progress-nav" #progressNav aria-label="Hero animation timeline progress">
+      <button
+        type="button"
+        class="progress-slot"
+        (click)="goToPhase(0)"
+        aria-label="Phase 1: Next-Gen Engineering"
+      >
+        <span class="progress-bar" #progressBar1></span>
+      </button>
+      <button
+        type="button"
+        class="progress-slot"
+        (click)="goToPhase(1)"
+        aria-label="Phase 2: Autonomous Agents & Apps"
+      >
+        <span class="progress-bar" #progressBar2></span>
+      </button>
+      <button
+        type="button"
+        class="progress-slot"
+        (click)="goToPhase(2)"
+        aria-label="Phase 3: Your Vision Realized"
+      >
+        <span class="progress-bar" #progressBar3></span>
+      </button>
+    </div>
+
+    <!-- Scroll Indicator -->
+    <div class="hero-video__scroll-indicator" #scrollIndicator (click)="scrollToNext($event)">
+      <span>Scroll to explore</span>
+      <span class="arrow">&darr;</span>
+    </div>
+  </div>
+
+  <!-- Curtain Next Section: Building digital products that move businesses forward -->
+  <section class="hero-video__next" #nextSection id="overview">
+    <div class="hero-video__next-inner" id="services">
+      <span class="section-eyebrow">
+        PROXIMA GEN TECH
+      </span>
+
+      <h2>
+        Building digital products<br />
+        that move businesses forward.
+      </h2>
+
+      <p>
+        We combine software engineering, AI, data and
+        digital transformation to build scalable solutions
+        for modern businesses.
+      </p>
+
+      <!-- Feature Highlight Pillars -->
+      <div class="hero-video__pillars" id="solutions">
+        <div class="pillar-card">
+          <div class="pillar-icon pillar-icon--green">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polyline points="16 18 22 12 16 6"></polyline>
+              <polyline points="8 6 2 12 8 18"></polyline>
+            </svg>
+          </div>
+          <h3>Enterprise Engineering</h3>
+          <p>Architecting distributed, mission-critical systems and modern web platforms with clean maintainability.</p>
+        </div>
+
+        <div class="pillar-card">
+          <div class="pillar-icon pillar-icon--purple">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"></path>
+            </svg>
+          </div>
+          <h3>Applied AI &amp; Machine Learning</h3>
+          <p>Deploying intelligent automation, predictive analytics pipelines, and LLM-driven business tooling.</p>
+        </div>
+
+        <div class="pillar-card">
+          <div class="pillar-icon pillar-icon--green">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"></path>
+            </svg>
+          </div>
+          <h3>Cloud &amp; Scalable Ops</h3>
+          <p>Sustainable cloud infrastructure, Kubernetes orchestration, and resilient DevOps practices.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</section>

@@ -1,0 +1,147 @@
+:host {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.brand-logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  text-decoration: none;
+  cursor: pointer;
+  user-select: none;
+  transition: transform var(--transition-fast);
+}
+
+.brand-logo:hover {
+  transform: translateY(-1px);
+}
+
+.brand-logo-img {
+  display: block;
+  width: auto;
+  height: 42px;
+  object-fit: contain;
+  transition: transform 0.3s ease;
+}
+
+.brand-logo:hover .brand-logo-img {
+  transform: scale(1.02);
+}
+
+.logo-sm .brand-logo-img {
+  height: 32px;
+}
+
+.logo-md .brand-logo-img {
+  height: 42px;
+}
+
+.logo-lg .brand-logo-img {
+  height: 52px;
+}
+
+/* Fallback SVG Icon */
+.logo-icon-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.brand-gear-svg {
+  width: 40px;
+  height: 40px;
+  transition: transform 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+  filter: drop-shadow(0 2px 8px rgba(2, 189, 99, 0.25));
+}
+
+.brand-logo:hover .brand-gear-svg {
+  transform: rotate(45deg);
+}
+
+/* Wordmark */
+.logo-text-col {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  line-height: 1;
+}
+
+.logo-wordmark {
+  font-family: var(--font-heading);
+  font-weight: 800;
+  letter-spacing: -0.01em;
+  display: flex;
+  align-items: baseline;
+}
+
+.proxima-text {
+  color: var(--primary-purple);
+  font-size: 1.25rem;
+  font-weight: 800;
+}
+
+.gen-text {
+  color: var(--primary-green);
+  font-size: 1.25rem;
+  font-weight: 800;
+  margin-left: 0.15rem;
+}
+
+.tech-text {
+  color: var(--dark);
+  font-size: 1.25rem;
+  font-weight: 700;
+}
+
+.logo-tagline {
+  font-family: var(--font-heading);
+  font-size: 0.58rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  color: var(--primary-green);
+  margin-top: 0.2rem;
+  text-transform: uppercase;
+}
+
+.logo-sm .brand-gear-svg {
+  width: 30px;
+  height: 30px;
+}
+.logo-sm .proxima-text,
+.logo-sm .gen-text,
+.logo-sm .tech-text {
+  font-size: 1rem;
+}
+.logo-sm .logo-tagline {
+  font-size: 0.5rem;
+}
+
+.logo-lg .brand-gear-svg {
+  width: 52px;
+  height: 52px;
+}
+.logo-lg .proxima-text,
+.logo-lg .gen-text,
+.logo-lg .tech-text {
+  font-size: 1.6rem;
+}
+.logo-lg .logo-tagline {
+  font-size: 0.65rem;
+  letter-spacing: 0.2em;
+}
+
+/* Dark Theme */
+.theme-dark .tech-text {
+  color: #FFFFFF;
+}
+
+.theme-dark .proxima-text {
+  color: #A87FFB;
+}
+
+.theme-dark .brand-logo-img {
+  filter: brightness(1.15);
+}

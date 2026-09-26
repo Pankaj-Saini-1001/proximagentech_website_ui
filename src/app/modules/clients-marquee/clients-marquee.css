@@ -1,0 +1,114 @@
+:host {
+  display: block;
+  width: 100%;
+}
+
+.clients-section {
+  padding: clamp(3.5rem, 5vw, 5rem) 0;
+  background: linear-gradient(180deg, #FFFFFF 0%, #F8FAFC 100%);
+  border-top: 1px solid #E2E8F0;
+  border-bottom: 1px solid #E2E8F0;
+  overflow: hidden;
+}
+
+/* Header */
+.clients-header {
+  text-align: center;
+  margin-bottom: 2.5rem;
+}
+
+.clients-label {
+  font-family: var(--font-heading);
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #94A3B8;
+  margin: 0;
+}
+
+/* Marquee Lanes */
+.marquee-lane {
+  position: relative;
+  overflow: hidden;
+  margin-bottom: 14px;
+
+  /* Gradient edge fade masks */
+  mask-image: linear-gradient(
+    to right,
+    transparent 0%,
+    black 8%,
+    black 92%,
+    transparent 100%
+  );
+  -webkit-mask-image: linear-gradient(
+    to right,
+    transparent 0%,
+    black 8%,
+    black 92%,
+    transparent 100%
+  );
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.marquee-lane--reverse {
+  /* Reverse direction is handled by GSAP animation */
+}
+
+.marquee-track {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  width: max-content;
+  will-change: transform;
+}
+
+/* Client Cards */
+.client-card {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: #FFFFFF;
+  border: 1px solid #E2E8F0;
+  border-radius: 14px;
+  padding: 12px 20px;
+  white-space: nowrap;
+  flex-shrink: 0;
+  box-shadow: 0 2px 8px rgba(30, 41, 59, 0.04);
+  transition: box-shadow 0.2s ease, border-color 0.2s ease;
+  cursor: default;
+
+  &:hover {
+    border-color: #10B981;
+    box-shadow: 0 6px 20px rgba(16, 185, 129, 0.12);
+  }
+}
+
+.client-card--dark {
+  background: #FAFBFC;
+  border-color: #EEF2F7;
+}
+
+.client-avatar {
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-heading);
+  font-size: 0.78rem;
+  font-weight: 800;
+  flex-shrink: 0;
+}
+
+.client-name {
+  font-family: var(--font-heading);
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: #334155;
+  letter-spacing: -0.01em;
+}

@@ -1,0 +1,19 @@
+<div
+  class="marquee-container"
+  [class.fade-edges]="fadeEdges()"
+  [class.pause-hover]="pauseOnHover()"
+>
+  <div
+    class="marquee-track"
+    [class.dir-right]="direction() === 'right'"
+    [style.animationDuration.s]="speed()"
+  >
+    <div class="marquee-group">
+      <ng-content></ng-content>
+    </div>
+    <!-- Duplicate group for seamless infinite CSS looping -->
+    <div class="marquee-group" aria-hidden="true">
+      <ng-content></ng-content>
+    </div>
+  </div>
+</div>

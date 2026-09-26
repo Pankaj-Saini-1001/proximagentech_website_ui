@@ -1,0 +1,40 @@
+<div
+  class="section-heading-wrap"
+  [class.align-left]="align() === 'left'"
+  [class.align-center]="align() === 'center'"
+  [class.align-right]="align() === 'right'"
+  [class.theme-dark]="theme() === 'dark'"
+>
+  @if (badge()) {
+    <div class="heading-badge-row">
+      <span
+        class="badge-pill"
+        [class.badge-green]="badgeVariant() === 'green'"
+        [class.badge-purple]="badgeVariant() === 'purple'"
+        [class.badge-dark]="badgeVariant() === 'dark'"
+      >
+        <svg class="badge-spark" width="10" height="10" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+          <polygon points="12 2 15 9 22 12 15 15 12 22 9 15 2 12 9 9"/>
+        </svg>
+        {{ badge() }}
+      </span>
+    </div>
+  }
+
+  <h2 class="section-title">
+    @if (titleParts().highlight) {
+      {{ titleParts().before }}<span
+        class="highlighted-text"
+        [class.hl-purple]="highlightColor() === 'purple'"
+        [class.hl-green]="highlightColor() === 'green'"
+        [class.hl-gradient]="highlightColor() === 'gradient'"
+      >{{ titleParts().highlight }}</span>{{ titleParts().after }}
+    } @else {
+      {{ title() }}
+    }
+  </h2>
+
+  @if (subtitle()) {
+    <p class="section-subtitle">{{ subtitle() }}</p>
+  }
+</div>

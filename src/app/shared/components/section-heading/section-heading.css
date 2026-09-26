@@ -1,0 +1,142 @@
+:host {
+  display: block;
+  margin-bottom: 2.5rem;
+}
+
+.section-heading-wrap {
+  width: 100%;
+}
+
+.align-center {
+  text-align: center;
+  margin-inline: auto;
+  max-width: 780px;
+}
+
+.align-left {
+  text-align: left;
+  max-width: 780px;
+}
+
+.align-right {
+  text-align: right;
+  margin-left: auto;
+  max-width: 780px;
+}
+
+/* Badge Pill */
+.heading-badge-row {
+  margin-bottom: 1rem;
+}
+
+.badge-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.35rem 0.95rem;
+  border-radius: var(--radius-full);
+  font-family: var(--font-heading);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.badge-spark {
+  width: 10px;
+  height: 10px;
+  display: inline-block;
+  flex-shrink: 0;
+}
+
+.badge-green {
+  background: rgba(2, 189, 99, 0.12);
+  color: var(--primary-green-dark);
+  border: 1px solid rgba(2, 189, 99, 0.25);
+}
+.badge-green .badge-spark {
+  color: var(--primary-green);
+}
+
+.badge-purple {
+  background: rgba(90, 27, 217, 0.10);
+  color: var(--primary-purple);
+  border: 1px solid rgba(90, 27, 217, 0.22);
+}
+.badge-purple .badge-spark {
+  color: var(--primary-purple);
+}
+
+.badge-dark {
+  background: rgba(17, 19, 24, 0.08);
+  color: var(--dark);
+  border: 1px solid rgba(17, 19, 24, 0.15);
+}
+.badge-dark .badge-spark {
+  color: var(--dark);
+}
+
+/* Title */
+.section-title {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  line-height: 1.18;
+  letter-spacing: -0.025em;
+  margin: 0;
+  color: var(--dark);
+}
+
+.highlighted-text {
+  position: relative;
+  display: inline-block;
+}
+
+.hl-purple {
+  color: var(--primary-purple);
+}
+
+.hl-green {
+  color: var(--primary-green);
+}
+
+.hl-gradient {
+  background: linear-gradient(135deg, var(--primary-green) 0%, var(--primary-purple) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Subtitle */
+.section-subtitle {
+  font-family: var(--font-body);
+  font-size: 1.1rem;
+  line-height: 1.65;
+  color: var(--text-muted);
+  margin-top: 1rem;
+  max-width: 680px;
+}
+
+.align-center .section-subtitle {
+  margin-inline: auto;
+}
+
+/* Dark Theme */
+.theme-dark .section-title {
+  color: #FFFFFF;
+}
+
+.theme-dark .section-subtitle {
+  color: #A5AEA9;
+}
+
+.theme-dark .badge-green {
+  background: rgba(2, 189, 99, 0.18);
+  color: var(--primary-green);
+  border-color: rgba(2, 189, 99, 0.35);
+}
+
+.theme-dark .badge-purple {
+  background: rgba(90, 27, 217, 0.25);
+  color: #A87FFB;
+  border-color: rgba(90, 27, 217, 0.4);
+}

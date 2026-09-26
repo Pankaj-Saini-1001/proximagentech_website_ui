@@ -1,0 +1,230 @@
+:host {
+  display: block;
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  z-index: 1;
+  pointer-events: auto;
+}
+
+/* =============================================================================
+   FLAGSHIP EDITORIAL SITE FOOTER (GOOGLE ANTIGRAVITY COMPOSITION)
+   - Canvas / Background: #FFFFFF (Clean crisp white, no dark or bluish backgrounds)
+   - Three distinct primary zones: Top Navigation, Giant Wordmark, Bottom Bar
+   ============================================================================= */
+.site-footer {
+  background-color: #FFFFFF;
+  border-top: 1px solid #E2E8F0;
+  padding-top: clamp(3.5rem, 6vw, 5.5rem);
+  padding-bottom: 2.25rem;
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+}
+
+.footer-container {
+  max-width: 1400px;
+  margin-inline: auto;
+  padding-inline: clamp(1.5rem, 4vw, 3.5rem);
+}
+
+/* =============================================================================
+   ZONE 1: TOP RIGHT MULTI-COLUMN NAVIGATION
+   - Aligned to the top-right of the container
+   - 2 vertical columns of links (0.95rem, 500 weight)
+   - Smooth hover translateX(2px) and color shift to #10B981
+   ============================================================================= */
+.footer-top-zone {
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+  margin-bottom: clamp(2rem, 4.5vw, 4rem);
+}
+
+.footer-top-links {
+  display: flex;
+  gap: clamp(3.5rem, 8vw, 7.5rem);
+}
+
+.footer-nav-col {
+  display: flex;
+  flex-direction: column;
+}
+
+.footer-links-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.95rem;
+}
+
+.footer-nav-link {
+  font-family: var(--font-heading);
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: #1E293B;
+  text-decoration: none;
+  display: inline-block;
+  transition: color 0.22s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.22s cubic-bezier(0.16, 1, 0.3, 1);
+  line-height: 1.4;
+}
+
+.footer-nav-link:hover {
+  color: #10B981;
+  transform: translateX(2px);
+}
+
+/* =============================================================================
+   ZONE 2: GIANT DISPLAY WORDMARK
+   - "ProximaGen Tech"
+   - Reduced font-weight (600), clean natural baseline for all letters
+   - No hover displacement or floating animations
+   ============================================================================= */
+.footer-wordmark-zone {
+  width: 100%;
+  margin-bottom: clamp(2.5rem, 5vw, 4.5rem);
+  user-select: none;
+  overflow: hidden;
+}
+
+.giant-wordmark {
+  font-family: var(--font-heading);
+  font-size: clamp(3.75rem, 11vw, 12rem);
+  font-weight: 600;
+  line-height: 0.95;
+  letter-spacing: -0.035em;
+  color: #1E293B;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: baseline;
+  flex-wrap: nowrap;
+  white-space: nowrap;
+  cursor: default;
+}
+
+.wordmark-stem {
+  display: inline-block;
+  color: #1E293B;
+}
+
+.wordmark-tech {
+  display: inline-block;
+  margin-left: 0.28em;
+  color: #1E293B;
+}
+
+/* =============================================================================
+   ZONE 3: BOTTOM SUB-BAR & HAIRLINE DIVIDER
+   - Full-width 1px border (#E2E8F0)
+   - Left: Official Brand Logo
+   - Right: Horizontal legal / utility links (About ProximaGenTech, Solutions, Privacy, Terms) in #64748B
+   ============================================================================= */
+.footer-bottom-bar {
+  border-top: 1px solid #E2E8F0;
+  padding-top: 1.85rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.75rem;
+  width: 100%;
+}
+
+.bottom-brand-left {
+  display: flex;
+  align-items: center;
+}
+
+.bottom-logo-link {
+  display: inline-flex;
+  align-items: center;
+  text-decoration: none;
+  cursor: pointer;
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1),
+              opacity 0.25s ease;
+}
+
+.bottom-logo-link:hover {
+  transform: translateY(-1px);
+  opacity: 0.92;
+}
+
+.footer-logo-img {
+  height: 42px;
+  width: auto;
+  max-width: 180px;
+  object-fit: contain;
+  display: block;
+}
+
+/* Horizontal Legal / Utility Links */
+.bottom-links-right {
+  display: flex;
+  align-items: center;
+  gap: clamp(1.25rem, 2.5vw, 2.25rem);
+  flex-wrap: wrap;
+}
+
+.bottom-legal-link {
+  font-family: var(--font-heading);
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #64748B; /* Muted slate text for legal links */
+  text-decoration: none;
+  transition: color 0.2s ease, transform 0.2s ease;
+  white-space: nowrap;
+}
+
+.bottom-legal-link:hover {
+  color: #10B981; /* Brand Green hover */
+}
+
+/* =============================================================================
+   RESPONSIVE DESIGN (Screens under 900px & Mobile)
+   ============================================================================= */
+@media (max-width: 900px) {
+  .footer-bottom-bar {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.5rem;
+    padding-top: 1.5rem;
+  }
+
+  .bottom-links-right {
+    gap: 1.25rem;
+    width: 100%;
+  }
+}
+
+@media (max-width: 600px) {
+  .footer-top-zone {
+    justify-content: flex-start;
+  }
+
+  .footer-top-links {
+    width: 100%;
+    justify-content: space-between;
+    gap: 2rem;
+  }
+
+  .giant-wordmark {
+    font-size: clamp(2.35rem, 9.5vw, 4.5rem);
+    letter-spacing: -0.035em;
+  }
+
+  .bottom-links-right {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.85rem;
+  }
+}
+
+@media (max-height: 500px) {
+  :host {
+    position: relative;
+  }
+}

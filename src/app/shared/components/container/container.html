@@ -1,0 +1,6 @@
+<div
+  [class]="'container-box max-w-' + maxWidth() + ' ' + className()"
+  [class.has-padding]="padded()"
+>
+  <ng-content></ng-content>
+</div>

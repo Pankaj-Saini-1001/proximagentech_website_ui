@@ -1,0 +1,293 @@
+<!-- Hero Video Header Section (Maintained globally/intact) -->
+<app-hero-video></app-hero-video>
+
+<!-- Homepage Main Body Content (Sitting seamlessly between Hero and Footer) -->
+<main class="home-content-root">
+  <!-- =========================================================================
+       SECTION 1: Enterprise Proof / Industry Logo Strip
+       ========================================================================= -->
+  <section class="proof-strip-section" aria-label="Enterprise Proof and Industry Coverage">
+    <div class="container">
+      <p class="proof-strip-label">
+        Powering Sustainable Innovation Across Global Industries
+      </p>
+
+      <div class="proof-logos-grid">
+        @for (item of industryLogos; track item.name) {
+          <div class="proof-badge-item">
+            <div class="proof-badge-icon">
+              @if (item.icon === 'bank') {
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <line x1="3" y1="21" x2="21" y2="21"></line>
+                  <line x1="3" y1="10" x2="21" y2="10"></line>
+                  <polyline points="5 10 5 21"></polyline>
+                  <polyline points="19 10 19 21"></polyline>
+                  <polyline points="10 10 10 21"></polyline>
+                  <polyline points="14 10 14 21"></polyline>
+                  <polygon points="12 2 20 7 4 7 12 2"></polygon>
+                </svg>
+              } @else if (item.icon === 'cart') {
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <circle cx="9" cy="21" r="1"></circle>
+                  <circle cx="20" cy="21" r="1"></circle>
+                  <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+                </svg>
+              } @else if (item.icon === 'truck') {
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <rect x="1" y="3" width="15" height="13"></rect>
+                  <polygon points="16 8 20 8 23 11 23 16 16 16 16 8"></polygon>
+                  <circle cx="5.5" cy="18.5" r="2.5"></circle>
+                  <circle cx="18.5" cy="18.5" r="2.5"></circle>
+                </svg>
+              } @else if (item.icon === 'hotel') {
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M18 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2Z"></path>
+                  <polyline points="9 22 9 12 15 12 15 22"></polyline>
+                  <line x1="8" y1="6" x2="10" y2="6"></line>
+                  <line x1="14" y1="6" x2="16" y2="6"></line>
+                  <line x1="8" y1="10" x2="10" y2="10"></line>
+                  <line x1="14" y1="10" x2="16" y2="10"></line>
+                </svg>
+              } @else {
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <circle cx="12" cy="12" r="3"></circle>
+                  <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path>
+                </svg>
+              }
+            </div>
+            <div class="proof-badge-text">
+              <span class="badge-title">{{ item.name }}</span>
+              <span class="badge-sub">{{ item.category }}</span>
+            </div>
+          </div>
+        }
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       CLIENTS MARQUEE: Infinite-Scroll Client Logos (Right → Left)
+       ========================================================================= -->
+  <app-clients-marquee></app-clients-marquee>
+
+  <!-- =========================================================================
+       SECTION 2: Modern Impact Numbers & Metrics Bar
+       ========================================================================= -->
+  <section class="metrics-bar-section" aria-label="Modern Impact Numbers and Key Performance Indicators">
+    <div class="container">
+      <div class="metrics-bar-grid">
+        @for (metric of metrics; track metric.label) {
+          <div class="metric-card">
+            <div class="metric-number-row">
+              <span class="metric-number">{{ metric.value }}</span>
+            </div>
+            <h3 class="metric-label">{{ metric.label }}</h3>
+            <p class="metric-detail">{{ metric.detail }}</p>
+          </div>
+        }
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       SECTION 3: Three Strategic Engineering Tracks
+       ========================================================================= -->
+  <section class="tracks-section" aria-labelledby="tracks-heading">
+    <div class="container">
+      <div class="section-center-head">
+        <div class="pill-tag pill-tag--mint">
+          <svg class="pill-spark" width="10" height="10" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><polygon points="12 2 15 9 22 12 15 15 12 22 9 15 2 12 9 9"/></svg>
+          <span>Core Disciplines</span>
+        </div>
+        <h2 id="tracks-heading" class="section-title">
+          Three Strategic Engineering Tracks
+        </h2>
+        <p class="section-desc">
+          Bespoke solutions architected to solve today's operational friction while preparing enterprises for tomorrow's AI autonomous ecosystem.
+        </p>
+      </div>
+
+      <div class="tracks-grid">
+        @for (track of engineeringTracks; track track.trackNumber) {
+          <article class="track-card">
+            <div class="track-card-header">
+              <div class="track-icon-box">
+                @if (track.icon === 'stack') {
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
+                    <polyline points="2 17 12 22 22 17"></polyline>
+                    <polyline points="2 12 12 17 22 12"></polyline>
+                  </svg>
+                } @else if (track.icon === 'ai') {
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"></path>
+                    <circle cx="12" cy="12" r="4"></circle>
+                  </svg>
+                } @else {
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M17.5 19H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9Z"></path>
+                  </svg>
+                }
+              </div>
+              <span class="track-badge">{{ track.trackNumber }}</span>
+            </div>
+
+            <h3 class="track-title">{{ track.title }}</h3>
+            <p class="track-desc">{{ track.desc }}</p>
+
+            <ul class="track-capabilities-list">
+              @for (cap of track.capabilities; track cap) {
+                <li class="capability-item">
+                  <svg class="check-svg" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                  </svg>
+                  <span>{{ cap }}</span>
+                </li>
+              }
+            </ul>
+
+            <div class="track-card-footer">
+              <a [routerLink]="track.link" class="track-link">
+                <span>Learn More</span>
+                <span class="link-arrow">&rarr;</span>
+              </a>
+            </div>
+          </article>
+        }
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       SECTION 4: Sustainable Advantage Bento & Comparison Matrix
+       ========================================================================= -->
+  <section class="advantage-section" aria-labelledby="advantage-heading">
+    <div class="container">
+      <div class="section-center-head">
+        <div class="pill-tag pill-tag--purple">
+          <span>Architectural Integrity</span>
+        </div>
+        <h2 id="advantage-heading" class="section-title">
+          The Sustainable Engineering Advantage
+        </h2>
+        <p class="section-desc">
+          How our architecture standards deliver exponential operational value compared to legacy agency models.
+        </p>
+      </div>
+
+      <div class="advantage-bento-grid">
+        <!-- Left: 60% Comparison Matrix Card -->
+        <article class="bento-comparison-card">
+          <div class="bento-card-top">
+            <span class="bento-eyebrow">Direct Comparison</span>
+            <h3 class="bento-heading">Traditional IT Agency vs. Proxima Zentech</h3>
+          </div>
+
+          <div class="comparison-table-wrapper">
+            <table class="comparison-table">
+              <thead>
+                <tr>
+                  <th scope="col" class="th-aspect">Strategic Dimension</th>
+                  <th scope="col" class="th-legacy">Traditional IT Agency</th>
+                  <th scope="col" class="th-proxima">Proxima Zentech</th>
+                </tr>
+              </thead>
+              <tbody>
+                @for (row of comparisonRows; track row.aspect) {
+                  <tr>
+                    <td class="td-aspect">
+                      <strong>{{ row.aspect }}</strong>
+                    </td>
+                    <td class="td-legacy">
+                      <span class="neg-mark" aria-hidden="true">&#x274C;</span>
+                      <span>{{ row.traditional }}</span>
+                    </td>
+                    <td class="td-proxima">
+                      <span class="pos-mark" aria-hidden="true">&#x2713;</span>
+                      <span>{{ row.proxima }}</span>
+                    </td>
+                  </tr>
+                }
+              </tbody>
+            </table>
+          </div>
+        </article>
+
+        <!-- Right: 40% Client Philosophy Card -->
+        <article class="bento-philosophy-card">
+          <div class="bento-card-top">
+            <div class="pill-tag pill-tag--mint">
+              <svg class="pill-spark" width="10" height="10" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><polygon points="12 2 15 9 22 12 15 15 12 22 9 15 2 12 9 9"/></svg>
+              <span>Our Philosophy</span>
+            </div>
+            <h3 class="bento-heading">With Us, You’ll Feel Heard.</h3>
+          </div>
+
+          <div class="philosophy-narrative">
+            <p>
+              We don’t believe in forcing one-size-fits-all software or trapping clients inside proprietary runtime black boxes.
+            </p>
+            <p>
+              We listen to your engineers, study your actual bottlenecks, and architect lean, high-concurrency systems that your in-house team can comfortably own and operate forever.
+            </p>
+          </div>
+
+          <div class="philosophy-highlight-box">
+            <div class="ph-stat">
+              <span class="ph-num">100%</span>
+              <span class="ph-label">IP Transfer on Release</span>
+            </div>
+            <div class="ph-stat">
+              <span class="ph-num">0</span>
+              <span class="ph-label">Hidden Runtime Fees</span>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       SECTION 5: Enterprise Testimonials (Standalone Modular Component)
+       ========================================================================= -->
+  <app-testimonial></app-testimonial>
+
+  <!-- =========================================================================
+       SECTION 6: Bottom Action CTA Banner
+       ========================================================================= -->
+  <section class="cta-banner-section" aria-labelledby="home-cta-heading">
+    <div class="container">
+      <div class="cta-slate-card">
+        <!-- Ambient radial emerald glow orb -->
+        <div class="cta-radial-orb" aria-hidden="true"></div>
+
+        <div class="cta-inner-content">
+          <div class="pill-tag pill-tag--dark-emerald">
+            <svg class="pill-spark" width="10" height="10" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><polygon points="12 2 15 9 22 12 15 15 12 22 9 15 2 12 9 9"/></svg>
+            <span>Let’s Build Together</span>
+          </div>
+
+          <h2 id="home-cta-heading" class="cta-headline">
+            Have a Project in Mind? <span class="text-brand-green">Let’s Make It Real.</span>
+          </h2>
+
+          <p class="cta-subline">
+            Let us join forces to build the next generation of businesses, driven by innovation, agility, and sustainable purpose. Claim your complimentary scoping consultation today.
+          </p>
+
+          <div class="cta-button-group">
+            <a routerLink="/contact-us" class="btn btn-primary-emerald">
+              <span>Schedule Free Consultation</span>
+              <span class="btn-arrow">&rarr;</span>
+            </a>
+
+            <a routerLink="/services" class="btn btn-secondary-outline">
+              <span>Explore Our Capabilities</span>
+              <span class="btn-arrow">&rarr;</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>

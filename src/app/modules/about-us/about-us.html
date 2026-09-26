@@ -1,0 +1,401 @@
+<!-- Half-Screen Hero Header with header.png -->
+<section class="page-hero" aria-label="About Us Page Hero">
+  <img
+    src="assets/images/header.png"
+    alt="About ProximaGenTech"
+    class="page-hero__bg"
+    loading="eager"
+    fetchpriority="high"
+  />
+  <div class="page-hero__overlay"></div>
+
+  <div class="page-hero__content">
+    <h1 class="page-hero__title">
+      Let’s Shape the Future Together &ndash; <span class="text-brand-green">Partner with Our Innovators.</span>
+    </h1>
+  </div>
+</section>
+
+<!-- Main Page Content -->
+<main class="about-content-wrapper">
+  <!-- =========================================================================
+       SECTION 1: Executive Overview & Genesis Story (2-Column Split)
+       ========================================================================= -->
+  <section class="overview-section" aria-labelledby="overview-heading">
+    <div class="container">
+      <div class="overview-grid">
+        <!-- Left: Story & Mission Narrative -->
+        <div class="overview-content">
+          <div class="pill-tag pill-tag--mint">
+            <svg class="pill-spark" width="10" height="10" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><polygon points="12 2 15 9 22 12 15 15 12 22 9 15 2 12 9 9"/></svg>
+            <span>Who We Are</span>
+          </div>
+
+          <h2 id="overview-heading" class="section-heading">
+            Engineering Intelligent, Sustainable Futures for <span class="text-brand-green">Global Enterprises.</span>
+          </h2>
+
+          <div class="overview-narrative">
+            <p class="narrative-lead">
+              At ProximaGenTech, we bridge high-performance software engineering—across web platforms, mobile ecosystems, and bespoke enterprise systems—with next-generation autonomous AI agents, powered by clean, energy-efficient cloud architecture.
+            </p>
+            <p class="narrative-body">
+              Founded by distributed systems architects and machine learning engineers, we help forward-thinking organizations transition from rigid legacy frameworks into agile, intelligent, and carbon-conscious operational ecosystems. We reject disposable code and computing waste, building deterministic software designed to endure.
+            </p>
+          </div>
+
+          <div class="overview-meta-chips">
+            <div class="meta-chip">
+              <span class="meta-icon">✓</span>
+              <span>Zero Vendor Lock-In</span>
+            </div>
+            <div class="meta-chip">
+              <span class="meta-icon">✓</span>
+              <span>Deterministic AI Guardrails</span>
+            </div>
+            <div class="meta-chip">
+              <span class="meta-icon">✓</span>
+              <span>Green Compute Architecture</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right: Interactive Visual Card / Stat Block -->
+        <div class="overview-aside">
+          <div class="foundation-card">
+            <div class="foundation-card__header">
+              <div class="foundation-badge">
+                <span class="pulse-dot"></span>
+                <span>ENTERPRISE STANDARDS</span>
+              </div>
+              <h3 class="foundation-title">Crafting Next-Gen Solutions</h3>
+              <p class="foundation-subtitle">
+                Engineered with architectural discipline, high concurrency, and measurable environmental responsibility.
+              </p>
+            </div>
+
+            <div class="credentials-list">
+              @for (cred of credentials; track cred.title) {
+                <div class="credential-item">
+                  <div class="credential-icon-box">
+                    <svg class="cred-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                      <path d="m9 12 2 2 4-4"/>
+                    </svg>
+                  </div>
+                  <div class="credential-text">
+                    <h4 class="credential-name">{{ cred.title }}</h4>
+                    <p class="credential-desc">{{ cred.desc }}</p>
+                  </div>
+                </div>
+              }
+            </div>
+
+            <div class="foundation-footer">
+              <div class="foundation-metric">
+                <span class="fm-val">100%</span>
+                <span class="fm-lbl">Codebase Ownership</span>
+              </div>
+              <div class="fm-divider"></div>
+              <div class="foundation-metric">
+                <span class="fm-val">Sub-50ms</span>
+                <span class="fm-lbl">Median API Latency</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       SECTION 2: Mission & Vision (Asymmetrical Bento Grid)
+       ========================================================================= -->
+  <section class="mission-vision-section" aria-labelledby="mv-heading">
+    <div class="container">
+      <div class="section-center-head">
+        <div class="pill-tag pill-tag--purple">
+          <span>Strategic Foundation</span>
+        </div>
+        <h2 id="mv-heading" class="section-heading">Purpose-Driven Architecture & Industry Reach</h2>
+        <p class="section-subtext">
+          Pioneering software that scales seamlessly without compromising planetary resources or technical integrity.
+        </p>
+      </div>
+
+      <div class="bento-grid">
+        <!-- Card 1: Mission (60% width) -->
+        <article class="bento-card bento-card--mission">
+          <div class="bento-card__badge-row">
+            <span class="bento-pill bento-pill--green">Core Purpose</span>
+          </div>
+          <h3 class="bento-title">Our Mission</h3>
+          <p class="bento-copy">
+            We are committed to pushing the boundaries of technology to deliver forward-thinking strategies and solutions that not only solve today's challenges but also prepare our clients for the future. Through our expertise in IT and consulting services, we strive to be the catalyst that helps businesses reimagine what's possible and achieve lasting success.
+          </p>
+
+          <div class="mission-deliverables">
+            <div class="deliverable-item">
+              <div class="check-icon">
+                <svg viewBox="0 0 20 20" fill="none">
+                  <circle cx="10" cy="10" r="9" fill="#E6FBF2"/>
+                  <path d="M6 10.5L8.5 13L14 7.5" stroke="#10B981" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </div>
+              <div>
+                <strong>Agility:</strong> Rapid prototyping and adaptive sprints tailored to evolving market shifts.
+              </div>
+            </div>
+
+            <div class="deliverable-item">
+              <div class="check-icon">
+                <svg viewBox="0 0 20 20" fill="none">
+                  <circle cx="10" cy="10" r="9" fill="#E6FBF2"/>
+                  <path d="M6 10.5L8.5 13L14 7.5" stroke="#10B981" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </div>
+              <div>
+                <strong>Reliability:</strong> Mission-critical resilience with fault-tolerant distributed backends.
+              </div>
+            </div>
+
+            <div class="deliverable-item">
+              <div class="check-icon">
+                <svg viewBox="0 0 20 20" fill="none">
+                  <circle cx="10" cy="10" r="9" fill="#E6FBF2"/>
+                  <path d="M6 10.5L8.5 13L14 7.5" stroke="#10B981" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </div>
+              <div>
+                <strong>Purpose:</strong> Sustainable computing that slashes computational waste and energy costs.
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Card 2: Vision (40% width) -->
+        <article class="bento-card bento-card--vision">
+          <div class="bento-card__badge-row">
+            <span class="bento-pill bento-pill--purple">Future Outlook</span>
+          </div>
+          <h3 class="bento-title">Our Vision</h3>
+          <p class="bento-copy">
+            Empowering organizations across key enterprise verticals through Generative AI and autonomous software systems that operate with mathematical precision, continuous security, and minimal compute overhead.
+          </p>
+
+          <div class="industry-badges-block">
+            <span class="industry-label">Target Industry Sectors:</span>
+            <div class="industry-tags-wrap">
+              @for (ind of industries; track ind) {
+                <span class="industry-badge">{{ ind }}</span>
+              }
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       SECTION 3: The 4 Strategic Pillars (4-Column Grid)
+       ========================================================================= -->
+  <section class="pillars-section" aria-labelledby="pillars-heading">
+    <div class="container">
+      <div class="section-center-head">
+        <div class="pill-tag pill-tag--mint">
+          <svg class="pill-spark" width="10" height="10" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><polygon points="12 2 15 9 22 12 15 15 12 22 9 15 2 12 9 9"/></svg>
+          <span>Core Capabilities</span>
+        </div>
+        <h2 id="pillars-heading" class="section-heading">The Four Strategic Pillars</h2>
+        <p class="section-subtext">
+          Engineered to give enterprise partners an enduring competitive advantage through intelligent and clean architecture.
+        </p>
+      </div>
+
+      <div class="pillars-grid">
+        @for (pillar of pillars; track pillar.title) {
+          <article class="pillar-card">
+            <div class="pillar-header">
+              <div class="pillar-icon-box">
+                @if (pillar.icon === 'ai') {
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/>
+                    <circle cx="12" cy="12" r="4"/>
+                  </svg>
+                } @else if (pillar.icon === 'stack') {
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <polygon points="12 2 2 7 12 12 22 7 12 2"/>
+                    <polyline points="2 17 12 22 22 17"/>
+                    <polyline points="2 12 12 17 22 12"/>
+                  </svg>
+                } @else if (pillar.icon === 'sustainable') {
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z"/>
+                    <path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"/>
+                  </svg>
+                } @else {
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                    <circle cx="12" cy="11" r="2"/>
+                    <path d="M12 13v3"/>
+                  </svg>
+                }
+              </div>
+              <span class="pillar-category">{{ pillar.badge }}</span>
+            </div>
+
+            <h3 class="pillar-title">{{ pillar.title }}</h3>
+            <p class="pillar-desc">{{ pillar.desc }}</p>
+          </article>
+        }
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       SECTION 4: Live Impact & Performance Metrics (Full-Width Banner)
+       ========================================================================= -->
+  <section class="metrics-banner-section" aria-label="Performance Metrics">
+    <div class="container">
+      <div class="metrics-strip">
+        @for (m of metrics; track m.label) {
+          <div class="metric-card">
+            <div class="metric-val-wrap">
+              <span class="metric-number">{{ m.value }}</span>
+            </div>
+            <h4 class="metric-title">{{ m.label }}</h4>
+            <p class="metric-subtitle">{{ m.sub }}</p>
+          </div>
+        }
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       SECTION 5: Engineering Lifecycle & Delivery Roadmap (Horizontal Stepper)
+       ========================================================================= -->
+  <section class="roadmap-section" aria-labelledby="roadmap-heading">
+    <div class="container">
+      <div class="section-center-head">
+        <div class="pill-tag pill-tag--purple">
+          <span>Execution Framework</span>
+        </div>
+        <h2 id="roadmap-heading" class="section-heading">Engineering Lifecycle & Delivery Roadmap</h2>
+        <p class="section-subtext">
+          A disciplined, continuous delivery model designed for velocity, security, and measurable client success.
+        </p>
+      </div>
+
+      <div class="roadmap-stepper">
+        @for (step of roadmap; track step.step) {
+          <div class="stepper-item">
+            <div class="stepper-header">
+              <div class="stepper-badge">{{ step.step }}</div>
+              <div class="stepper-connector"></div>
+            </div>
+
+            <div class="stepper-body">
+              <h3 class="stepper-title">{{ step.title }}</h3>
+              <p class="stepper-desc">{{ step.desc }}</p>
+
+              <div class="stepper-deliverables">
+                @for (del of step.deliverables; track del) {
+                  <span class="del-tag">{{ del }}</span>
+                }
+              </div>
+            </div>
+          </div>
+        }
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       SECTION 6: Culture & Partnership Philosophy
+       ========================================================================= -->
+  <section class="culture-section" aria-labelledby="culture-heading">
+    <div class="container">
+      <div class="culture-grid">
+        <!-- Left: Core Philosophy Callout -->
+        <div class="culture-quote-card">
+          <div class="pill-tag pill-tag--mint">
+            <span>Our Culture</span>
+          </div>
+          <blockquote class="culture-quote">
+            “With us, you feel heard. We don't push one-size-fits-all software; we listen, iterate, and architect tailored solutions as your embedded technology partner.”
+          </blockquote>
+          <div class="culture-quote-author">
+            <div class="author-avatar">PG</div>
+            <div>
+              <div class="author-name">ProximaGenTech Engineering Council</div>
+              <div class="author-title">Sustainable Systems & AI Architecture</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right: 3 Key Tenets -->
+        <div class="culture-tenets">
+          @for (item of cultureHighlights; track item.title) {
+            <div class="tenet-card">
+              <div class="tenet-check">
+                <svg viewBox="0 0 24 24" fill="none" stroke="#10B981" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="20 6 9 17 4 12"/>
+                </svg>
+              </div>
+              <div class="tenet-content">
+                <h3 class="tenet-title">{{ item.title }}</h3>
+                <p class="tenet-desc">{{ item.desc }}</p>
+              </div>
+            </div>
+          }
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       SECTION 7: Bottom Call-To-Action (CTA) Banner
+       ========================================================================= -->
+  <section class="cta-section" aria-labelledby="cta-heading">
+    <div class="container">
+      <div class="cta-slate-card">
+        <!-- Ambient emerald glow orb behind content -->
+        <div class="cta-glow-orb" aria-hidden="true"></div>
+
+        <div class="cta-inner-content">
+          <div class="pill-tag pill-tag--dark-emerald">
+            <svg class="pill-spark" width="10" height="10" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><polygon points="12 2 15 9 22 12 15 15 12 22 9 15 2 12 9 9"/></svg>
+            <span>Collaborate With Us</span>
+          </div>
+
+          <h2 id="cta-heading" class="cta-headline">
+            Let’s Shape the Future Together &ndash; <span class="text-brand-green">Partner with Our Innovators.</span>
+          </h2>
+
+          <p class="cta-subheadline">
+            Discover how our engineering culture, sustainable mindset, and AI expertise can help your organization lead its industry.
+          </p>
+
+          <div class="cta-button-group">
+            <a routerLink="/contact-us" class="btn btn-primary-emerald">
+              <span>Schedule Free Consultation</span>
+              <svg class="btn-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="7" y1="17" x2="17" y2="7"/>
+                <polyline points="7 7 17 7 17 17"/>
+              </svg>
+            </a>
+
+            <a routerLink="/services" class="btn btn-secondary-outline">
+              <span>Explore Our Services</span>
+              <svg class="btn-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="5" y1="12" x2="19" y2="12"/>
+                <polyline points="12 5 19 12 12 19"/>
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+

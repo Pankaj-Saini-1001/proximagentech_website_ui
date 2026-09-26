@@ -1,0 +1,51 @@
+<a
+  [routerLink]="link()"
+  class="brand-logo"
+  [class.logo-sm]="size() === 'sm'"
+  [class.logo-md]="size() === 'md'"
+  [class.logo-lg]="size() === 'lg'"
+  [class.theme-dark]="theme() === 'dark'"
+  aria-label="ProximaGenTech - Home"
+>
+  @if (useImage()) {
+    <img
+      src="assets/brand/logo.webp"
+      alt="ProximaGenTech - Sustainable Solutions"
+      class="brand-logo-img"
+    />
+  } @else {
+    <!-- Gear SVG Icon (Dominant Green Brand Emblem) -->
+    <div class="logo-icon-wrapper">
+      <svg
+        class="brand-gear-svg"
+        viewBox="0 0 48 48"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <circle cx="24" cy="24" r="22" fill="none" stroke="rgba(2,189,99,0.15)" stroke-width="2" stroke-dasharray="3 3" />
+        <!-- Outer Cog Shape -->
+        <path
+          d="M21.5 4h5l1.2 5.1c1.2.4 2.4 1 3.5 1.7l4.8-2.2 3.5 3.5-2.2 4.8c.7 1.1 1.3 2.3 1.7 3.5l5.1 1.2v5l-5.1 1.2c-.4 1.2-1 2.4-1.7 3.5l2.2 4.8-3.5 3.5-4.8-2.2c-1.1.7-2.3 1.3-3.5 1.7L26.5 44h-5l-1.2-5.1c-1.2-.4-2.4-1-3.5-1.7l-4.8 2.2-3.5-3.5 2.2-4.8c-.7-1.1-1.3-2.3-1.7-3.5L4 26.5v-5l5.1-1.2c.4-1.2 1-2.4 1.7-3.5L8.6 12l3.5-3.5 4.8 2.2c1.1-.7 2.3-1.3 3.5-1.7L21.5 4z"
+          fill="#02BD63"
+        />
+        <!-- Inner Ring & Tech Core -->
+        <circle cx="24" cy="24" r="9" fill="#FFFFFF" />
+        <circle cx="24" cy="24" r="6" fill="#5A1BD9" />
+        <circle cx="24" cy="24" r="2.5" fill="#02BD63" />
+      </svg>
+    </div>
+
+    @if (variant() !== 'icon') {
+      <div class="logo-text-col">
+        <div class="logo-wordmark">
+          <span class="proxima-text">PROXIMA</span>
+          <span class="gen-text">GEN</span>
+          <span class="tech-text">TECH</span>
+        </div>
+        @if (variant() === 'full') {
+          <span class="logo-tagline">SUSTAINABLE SOLUTIONS</span>
+        }
+      </div>
+    }
+  }
+</a>

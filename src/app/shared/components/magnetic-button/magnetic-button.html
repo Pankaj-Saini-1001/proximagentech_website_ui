@@ -1,0 +1,34 @@
+<div
+  #magneticWrap
+  class="magnetic-interactive-wrap"
+  (mousemove)="onMouseMove($event)"
+  (mouseleave)="onMouseLeave()"
+>
+  @if (routerLink()) {
+    <a
+      [routerLink]="routerLink()"
+      [class]="'magnetic-inner-btn mag-' + variant() + ' mag-size-' + size()"
+      (click)="onClick($event)"
+    >
+      <span class="btn-inner-text"><ng-content></ng-content></span>
+    </a>
+  } @else if (href()) {
+    <a
+      [href]="href()"
+      [target]="target()"
+      [rel]="target() === '_blank' ? 'noopener noreferrer' : null"
+      [class]="'magnetic-inner-btn mag-' + variant() + ' mag-size-' + size()"
+      (click)="onClick($event)"
+    >
+      <span class="btn-inner-text"><ng-content></ng-content></span>
+    </a>
+  } @else {
+    <button
+      type="button"
+      [class]="'magnetic-inner-btn mag-' + variant() + ' mag-size-' + size()"
+      (click)="onClick($event)"
+    >
+      <span class="btn-inner-text"><ng-content></ng-content></span>
+    </button>
+  }
+</div>

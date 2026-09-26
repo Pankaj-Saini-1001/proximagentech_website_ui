@@ -1,0 +1,32 @@
+:host {
+  display: block;
+  min-height: 100vh;
+}
+
+.public-layout-shell {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  position: relative;
+}
+
+.public-main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  z-index: 2;
+  background-color: #FFFFFF;
+  margin-bottom: var(--footer-height, 500px);
+  box-shadow: 0 30px 60px rgba(15, 23, 42, 0.16);
+  border-bottom-left-radius: 28px;
+  border-bottom-right-radius: 28px;
+}
+
+@media (max-height: 500px) {
+  .public-main {
+    margin-bottom: 0;
+    box-shadow: none;
+    border-radius: 0;
+  }
+}

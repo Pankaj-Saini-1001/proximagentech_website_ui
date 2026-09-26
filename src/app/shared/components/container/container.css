@@ -1,0 +1,20 @@
+:host {
+  display: block;
+  width: 100%;
+}
+
+.container-box {
+  width: 100%;
+  margin-inline: auto;
+}
+
+.has-padding {
+  padding-inline: clamp(1rem, 3.5vw, 2.5rem);
+}
+
+.max-w-sm { max-width: 640px; }
+.max-w-md { max-width: 768px; }
+.max-w-lg { max-width: 1024px; }
+.max-w-xl { max-width: 1280px; }
+.max-w-2xl { max-width: 1440px; }
+.max-w-fluid { max-width: 100%; }

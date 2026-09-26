@@ -1,0 +1,565 @@
+// =============================================================================
+// PROXIMA GEN TECH - HERO VIDEO COMPONENT STYLES
+// Scroll-driven pinned hero with upward-rolling curtain transition
+// =============================================================================
+
+:host {
+  display: block;
+  width: 100%;
+}
+
+.hero-video {
+  position: relative;
+  width: 100%;
+    overflow: hidden;
+
+  // ---------------------------------------------------------------------------
+  // Pinned / Sticky Hero Visual Container
+  // Occupies 100vh initially and remains sticky during curtain upward scroll
+  // ---------------------------------------------------------------------------
+  &__sticky {
+    position: sticky;
+    top: 0;
+    width: 100%;
+    height: 100vh;
+    min-height: 600px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    // background-color: #111318;
+    z-index: 1;
+    will-change: transform, opacity;
+  }
+
+  // ---------------------------------------------------------------------------
+  // Media Wrapper (Supports both <img> and <video> identically)
+  // GSAP animates scale from 1 -> 0.94 and subtle border radius
+  // ---------------------------------------------------------------------------
+  &__media-wrapper {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    overflow: hidden;
+    transform-origin: center center;
+    border-radius: 0px;
+    will-change: transform, border-radius;
+    transition: border-radius 0.1s ease;
+  }
+
+  &__media {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+    user-select: none;
+    pointer-events: none;
+  }
+
+  // ---------------------------------------------------------------------------
+  // Subtle Ambient Overlay: Ensures high text contrast without darkening image
+  // ---------------------------------------------------------------------------
+  &__overlay {
+    position: absolute;
+    inset: 0;
+    z-index: 2;
+    pointer-events: none;
+    background:
+      radial-gradient(
+        ellipse 88% 72% at 50% 50%,
+        rgba(15, 23, 42, 0.45) 0%,
+        rgba(15, 23, 42, 0.82) 100%
+      ),
+      linear-gradient(
+        180deg,
+        rgba(15, 23, 42, 0.58) 0%,
+        rgba(15, 23, 42, 0.22) 40%,
+        rgba(15, 23, 42, 0.72) 100%
+      );
+  }
+
+  // ---------------------------------------------------------------------------
+  // Centered Hero Content Multi-Phase Stage
+  // Translates upward (y: 0 -> -100px) and fades out (1 -> 0) during scroll
+  // ---------------------------------------------------------------------------
+  &__content {
+    position: relative;
+    z-index: 3;
+    max-width: 1040px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 24px;
+    display: grid;
+    grid-template-areas: "stage";
+    place-items: center;
+    will-change: transform, opacity;
+  }
+
+  // Multi-Phase Slide Containers
+  .hero-phase {
+    grid-area: stage;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    visibility: hidden;
+    opacity: 0;
+    pointer-events: none;
+    will-change: transform, opacity, filter;
+  }
+
+  // Pill Badges across phases
+  .hero-pill-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-family: var(--font-heading);
+    font-size: clamp(0.72rem, 1vw, 0.8rem);
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: #FFFFFF;
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    padding: 7px 18px;
+    border-radius: 9999px;
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    margin-bottom: clamp(14px, 2.5vh, 22px);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
+    user-select: none;
+
+    .pill-spark {
+      width: 13px;
+      height: 13px;
+      color: #10B981;
+      display: inline-block;
+      vertical-align: middle;
+      flex-shrink: 0;
+    }
+  }
+
+  // Refined Thin/Medium Headlines (font-weight: 400 - 500, no thick/heavy slabs)
+  .hero-headline {
+    font-family: var(--font-heading);
+    font-size: clamp(2.4rem, 5.5vw, 4.8rem);
+    font-weight: 450;
+    line-height: 1.12;
+    letter-spacing: -0.01em;
+    color: #FFFFFF;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    text-wrap: balance;
+    text-shadow: 0 4px 24px rgba(0, 0, 0, 0.35);
+  }
+
+  .text-brand-green {
+    color: #10B981;
+  }
+
+  .text-lavender {
+    color: #C4B5FD;
+  }
+
+  // Phase 2 Masked Kinetic Word Slide
+  .line-row {
+    display: block;
+  }
+
+  .word-mask {
+    display: inline-block;
+    overflow: hidden;
+    vertical-align: top;
+    margin-right: 0.24em;
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+
+  .word {
+    display: inline-block;
+    will-change: transform;
+  }
+
+  // Phase 3 Subtitle & CTA Button
+  .hero-subtitle {
+    font-family: var(--font-body);
+    font-size: clamp(1.05rem, 1.6vw, 1.25rem);
+    font-weight: 300;
+    line-height: 1.55;
+    color: #94A3B8;
+    max-width: 660px;
+    margin: clamp(16px, 2.5vh, 24px) auto 0;
+    text-wrap: balance;
+    text-shadow: 0 2px 14px rgba(0, 0, 0, 0.35);
+  }
+
+  .hero-cta-wrapper {
+    margin-top: clamp(22px, 3.2vh, 34px);
+  }
+
+  .hero-cta-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    font-family: var(--font-heading);
+    font-weight: 600;
+    font-size: 0.98rem;
+    letter-spacing: -0.01em;
+    padding: 13px 30px;
+    border-radius: 9999px;
+    text-decoration: none;
+    cursor: pointer;
+    user-select: none;
+    background-color: #10B981;
+    color: #064E3B;
+    box-shadow: 0 4px 20px rgba(16, 185, 129, 0.35);
+    transition: all 0.28s cubic-bezier(0.16, 1, 0.3, 1);
+
+    .cta-arrow {
+      font-size: 1.15rem;
+      transition: transform 0.28s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    &:hover {
+      background-color: #059669;
+      color: #FFFFFF;
+      transform: translateY(-2px) scale(1.02);
+      box-shadow: 0 8px 28px rgba(16, 185, 129, 0.45);
+
+      .cta-arrow {
+        transform: translateX(4px);
+      }
+    }
+
+    &:active {
+      transform: translateY(0) scale(0.99);
+    }
+  }
+
+  // ---------------------------------------------------------------------------
+  // Visual Timeline Progress Slots (3px slender slots)
+  // ---------------------------------------------------------------------------
+  .hero-progress-nav {
+    position: absolute;
+    bottom: clamp(65px, 9vh, 88px);
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    z-index: 10;
+    pointer-events: auto;
+    will-change: transform, opacity;
+  }
+
+  .progress-slot {
+    width: clamp(48px, 6vw, 76px);
+    height: 3px;
+    border-radius: 9999px;
+    background: rgba(255, 255, 255, 0.22);
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    border: none;
+    padding: 0;
+    transition: background 0.2s ease, transform 0.2s ease;
+
+    &:hover {
+      background: rgba(255, 255, 255, 0.45);
+      transform: scaleY(1.8);
+    }
+
+    &:focus-visible {
+      outline: 2px solid #10B981;
+      outline-offset: 2px;
+    }
+  }
+
+  .progress-bar {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    background: #10B981;
+    border-radius: 9999px;
+    transform-origin: left center;
+    transform: scaleX(0);
+    will-change: transform;
+  }
+
+  // ---------------------------------------------------------------------------
+  // Floating Scroll Down Indicator
+  // ---------------------------------------------------------------------------
+  &__scroll-indicator {
+    position: absolute;
+    bottom: clamp(16px, 2.5vh, 26px);
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 3;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+    color: rgba(255, 255, 255, 0.65);
+    font-family: var(--font-body);
+    font-size: 0.72rem;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: color 0.25s ease;
+    will-change: transform, opacity;
+
+    .arrow {
+      font-size: 1.05rem;
+      line-height: 1;
+      animation: bounceDown 2s infinite ease-in-out;
+    }
+
+    &:hover {
+      color: #10B981;
+    }
+  }
+
+  // ---------------------------------------------------------------------------
+  // Curtain Next Section
+  // Posiitoned relatively with z-index higher than hero, rounded top corners,
+  // and deep shadow so it visually glides up over the hero like a clean curtain
+  // ---------------------------------------------------------------------------
+  &__next {
+    position: relative;
+    z-index: 10;
+    background: #FFFFFF;
+    border-radius: 40px 40px 0 0;
+    box-shadow: 0 -24px 60px rgba(0, 0, 0, 0.16);
+    min-height: 100vh;
+    padding: clamp(72px, 9vh, 108px) 24px clamp(60px, 8vh, 88px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+  }
+
+  &__next-inner {
+    max-width: 1120px;
+    width: 100%;
+    margin: 0 auto;
+    text-align: center;
+
+    .section-eyebrow {
+      display: inline-block;
+      font-family: var(--font-body);
+      font-size: 0.8125rem;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: #6D28D9;
+      margin-bottom: 18px;
+    }
+
+    h2 {
+      font-family: var(--font-heading);
+      font-size: clamp(2.2rem, 4.2vw, 3.5rem);
+      font-weight: 800;
+      line-height: 1.14;
+      letter-spacing: -0.028em;
+      color: #1E293B;
+      margin: 0 0 20px;
+      text-wrap: balance;
+    }
+
+    p {
+      font-family: var(--font-body);
+      font-size: clamp(1.05rem, 1.35vw, 1.22rem);
+      font-weight: 400;
+      line-height: 1.65;
+      color: #64748B;
+      max-width: 700px;
+      margin: 0 auto 60px;
+    }
+  }
+
+  // Capabilities 3-Column Grid in the curtain section
+  &__pillars {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 28px;
+    text-align: left;
+
+    .pillar-card {
+      background: #F8FAFC;
+      border: 1px solid #E2E8F0;
+      border-radius: 20px;
+      padding: 36px 30px;
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+
+      &:hover {
+        background: #FFFFFF;
+        border-color: rgba(16, 185, 129, 0.4);
+        box-shadow: 0 16px 36px rgba(16, 185, 129, 0.08);
+        transform: translateY(-4px);
+      }
+
+      .pillar-icon {
+        width: 48px;
+        height: 48px;
+        border-radius: 12px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 22px;
+
+        &--green {
+          background: rgba(16, 185, 129, 0.12);
+          color: #10B981;
+        }
+
+        &--purple {
+          background: rgba(109, 40, 217, 0.12);
+          color: #6D28D9;
+        }
+      }
+
+      h3 {
+        font-family: var(--font-heading);
+        font-size: 1.2rem;
+        font-weight: 700;
+        letter-spacing: -0.015em;
+        color: #1E293B;
+        margin: 0 0 12px;
+      }
+
+      p {
+        font-family: var(--font-body);
+        font-size: 0.95rem;
+        line-height: 1.6;
+        color: #64748B;
+        margin: 0;
+      }
+    }
+  }
+}
+
+// -----------------------------------------------------------------------------
+// Keyframe Animations
+// -----------------------------------------------------------------------------
+@keyframes pulseDot {
+  0%, 100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.55;
+    transform: scale(0.85);
+  }
+}
+
+@keyframes bounceDown {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(6px);
+  }
+  60% {
+    transform: translateY(3px);
+  }
+}
+
+// -----------------------------------------------------------------------------
+// Responsive Breakpoints
+// -----------------------------------------------------------------------------
+@media (max-width: 1024px) {
+  .hero-video {
+    &__next {
+      padding: 90px 20px 80px;
+    }
+
+    &__pillars {
+      grid-template-columns: 1fr;
+      gap: 20px;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-video {
+    &__sticky {
+      min-height: 540px;
+    }
+
+    &__content {
+      padding: 0 16px;
+
+      h1 {
+        font-size: 2.35rem;
+      }
+
+      p {
+        font-size: 1rem;
+        margin-bottom: 28px;
+      }
+    }
+
+    &__eyebrow {
+      font-size: 0.75rem;
+      padding: 6px 14px;
+      margin-bottom: 18px;
+    }
+
+    &__next {
+      border-radius: 28px 28px 0 0;
+      padding: 70px 16px 60px;
+
+      h2 {
+        font-size: 1.95rem;
+      }
+    }
+
+    &__scroll-indicator {
+      bottom: 24px;
+    }
+  }
+}
+
+// -----------------------------------------------------------------------------
+// Accessibility: Reduced Motion
+// -----------------------------------------------------------------------------
+@media (prefers-reduced-motion: reduce) {
+  .hero-video {
+    &__sticky {
+      position: relative;
+      height: auto;
+      min-height: 85vh;
+      padding: 120px 20px 80px;
+    }
+
+    &__media-wrapper {
+      transform: none !important;
+      border-radius: 0 !important;
+    }
+
+    &__content {
+      transform: none !important;
+      opacity: 1 !important;
+    }
+
+    &__scroll-indicator {
+      display: none;
+    }
+
+    &__next {
+      transform: none !important;
+      margin-top: 0 !important;
+    }
+  }
+}

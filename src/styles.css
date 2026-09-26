@@ -1,1 +1,570 @@
-/* You can add global styles to this file, and also import other style files */
+/* ==========================================================================
+   PROXIMA GEN TECH - DESIGN SYSTEM & GLOBAL STYLES
+   Visual Identity: Clean Modern Tech + Sustainability (Green) + Innovation (Purple)
+   Ratio Guide: 60% Light / 25% Dark / 10% Green / 5% Purple
+   ========================================================================== */
+
+/* Swiper base styles */
+@import 'swiper/css';
+@import 'swiper/css/navigation';
+@import 'swiper/css/pagination';
+
+:root {
+  /* ==========================================================================
+     GREEN INNOVATION THEME - DESIGN TOKENS
+     Base: Clean, high-contrast, light (No dark bluish/greenish canvas)
+     ========================================================================== */
+
+  /* Strict Design Tokens */
+  --primary-brand-green: #10B981;  /* Primary buttons, active states, key icons, highlights */
+  --primary-brand-purple: #6D28D9; /* Headings, secondary accents, interactive focus states */
+  --background-canvas: #FFFFFF;    /* Clean white for main page background & primary cards */
+  --text-primary: #1E293B;         /* Deep slate charcoal for readable body copy & headings */
+  --accent-tint: #A7F3D0;          /* Soft mint green for badge backgrounds, light tags, subtle pills */
+  --neutral-surface: #F8FAFC;      /* Ultra-light grey for section alternating backgrounds & input fills */
+  --border-line: #E2E8F0;          /* Subtle borders for cards, inputs, and dividers */
+
+  /* Theme Mappings & Derivatives */
+  --primary-green: var(--primary-brand-green);
+  --primary-green-dark: #059669;
+  --primary-green-light: var(--accent-tint);
+  --primary-green-rgb: 16, 185, 129;
+
+  --primary-purple: var(--primary-brand-purple);
+  --primary-purple-dark: #5B21B6;
+  --primary-purple-light: #EDE9FE;
+  --primary-purple-rgb: 109, 40, 217;
+
+  /* Neutrals & Typography */
+  --dark: var(--text-primary);
+  --dark-soft: #334155;
+  --dark-rgb: 30, 41, 59;
+
+  --text: var(--text-primary);
+  --text-muted: #64748B;
+  --text-light: #94A3B8;
+
+  /* Surfaces & Canvas */
+  --background: var(--background-canvas);
+  --background-soft: var(--neutral-surface);
+  --surface: var(--background-canvas);
+  --surface-elevated: var(--background-canvas);
+  --surface-neutral: var(--neutral-surface);
+
+  /* Borders & Dividers */
+  --border: var(--border-line);
+  --border-light: #F1F5F9;
+  --border-focus: rgba(16, 185, 129, 0.4);
+  --focus-ring: rgba(109, 40, 217, 0.35);
+
+  /* Constants */
+  --white: #FFFFFF;
+
+  /* ==========================================================================
+     GOOGLE DESIGN SYSTEM TYPOGRAPHY STACK
+     ========================================================================== */
+  /* Primary Heading / Brand Font (Google Sans style) */
+  --font-heading: "Google Sans", "Product Sans", "Plus Jakarta Sans", "Roboto", -apple-system, sans-serif;
+
+  /* Primary Body & Interface Font */
+  --font-body: "Google Sans Text", "Plus Jakarta Sans", "Roboto", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+
+  /* Typography Font Family Tokens */
+  --font-plus-jakarta: "Plus Jakarta Sans", -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-roboto: "Roboto", -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-google-sans: "Google Sans", "Product Sans", "Plus Jakarta Sans", "Roboto", -apple-system, sans-serif;
+  --font-google-sans-text: "Google Sans Text", "Plus Jakarta Sans", "Roboto", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+
+  /* Complete Typography Suite fallbacks */
+  --font-manrope: 'Manrope', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-dm-sans: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-inter: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-space-grotesk: 'Space Grotesk', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-sora: 'Sora', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-outfit: 'Outfit', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-urbanist: 'Urbanist', -apple-system, BlinkMacSystemFont, sans-serif;
+
+  /* Shadows tuned to slate text & vibrant accents */
+  --shadow-sm: 0 2px 8px rgba(30, 41, 59, 0.04);
+  --shadow-md: 0 8px 24px rgba(30, 41, 59, 0.06);
+  --shadow-lg: 0 16px 40px rgba(30, 41, 59, 0.08);
+  --shadow-green: 0 20px 50px rgba(16, 185, 129, 0.14);
+  --shadow-purple: 0 20px 50px rgba(109, 40, 217, 0.14);
+
+  /* Radii */
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 16px;
+  --radius-xl: 24px;
+  --radius-full: 9999px;
+
+  /* Transitions */
+  --transition-fast: 150ms cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-normal: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-slow: 400ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Base Reset & Smooth Font Rendering Globally */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+html {
+  font-family: var(--font-body);
+  font-size: 16px;
+  color: var(--text);
+  background-color: var(--background);
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+html.lenis, html.lenis body {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+.lenis.lenis-scrolling iframe {
+  pointer-events: none;
+}
+
+body {
+  font-family: var(--font-body);
+  font-weight: 400;
+  min-height: 100vh;
+  line-height: 1.6;
+  overflow-x: clip;
+  background-color: var(--background);
+  color: var(--text);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Headings, Navigation Brand Titles, and Hero Display Typography */
+h1, h2, h3, h4, h5, h6,
+.brand-title,
+.nav-brand-title,
+.nav-brand,
+.hero-display,
+.display-heading {
+  font-family: var(--font-heading);
+  color: var(--dark);
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Headings: weights between 600 (SemiBold) and 800 (ExtraBold) with negative tracking */
+h1 { font-size: clamp(2.4rem, 5vw, 4.2rem); font-weight: 800; letter-spacing: -0.02em; }
+h2 { font-size: clamp(1.85rem, 3.5vw, 3rem); font-weight: 700; letter-spacing: -0.02em; }
+h3 { font-size: clamp(1.35rem, 2.2vw, 1.85rem); font-weight: 700; letter-spacing: -0.02em; }
+h4 { font-size: 1.25rem; font-weight: 600; letter-spacing: -0.02em; }
+h5 { font-size: 1.1rem; font-weight: 600; letter-spacing: -0.02em; }
+h6 { font-size: 0.95rem; font-weight: 600; letter-spacing: -0.02em; }
+
+/* Standard Body Copy: 400 (Regular) and 500 (Medium) with normal line-height 1.6 */
+p {
+  font-family: var(--font-body);
+  font-weight: 400;
+  color: var(--text-muted);
+  line-height: 1.6;
+}
+
+p.lead,
+.lead,
+.text-body-medium,
+.text-medium {
+  font-weight: 500;
+  line-height: 1.6;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+
+img, svg {
+  display: block;
+  max-width: 100%;
+}
+
+/* General UI Text & Form Controls */
+button, input, select, textarea {
+  font-family: var(--font-body);
+  font-size: inherit;
+  color: inherit;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Hero Glow Background - Clean light base with subtle innovation aura */
+.hero-glow-bg {
+  background:
+    radial-gradient(circle at 85% 20%, rgba(109, 40, 217, 0.08), transparent 28%),
+    radial-gradient(circle at 15% 80%, rgba(16, 185, 129, 0.08), transparent 30%),
+    #ffffff;
+}
+
+/* Controlled Green-Purple Gradient */
+.gradient-brand {
+  background: linear-gradient(135deg, var(--primary-green) 0%, var(--primary-purple) 100%);
+}
+
+.text-gradient-brand {
+  background: linear-gradient(135deg, var(--primary-green) 0%, var(--primary-purple) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.text-purple {
+  color: var(--primary-purple);
+}
+
+.text-green {
+  color: var(--primary-green);
+}
+
+/* Horizontal Brand Spectrum Gradient (Purple -> Indigo -> Teal -> Green) */
+.gradient-brand-spectrum {
+  background: linear-gradient(90deg, #6D28D9 0%, #3B82F6 32%, #0D9488 68%, #10B981 100%);
+}
+
+.text-gradient-brand-spectrum {
+  background: linear-gradient(90deg, #6D28D9 0%, #3B82F6 32%, #0D9488 68%, #10B981 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Typography Utility Classes */
+.font-heading { font-family: var(--font-heading) !important; }
+.font-body { font-family: var(--font-body) !important; }
+.font-google-sans { font-family: var(--font-google-sans) !important; }
+.font-google-sans-text { font-family: var(--font-google-sans-text) !important; }
+.font-plus-jakarta { font-family: var(--font-plus-jakarta) !important; }
+.font-roboto { font-family: var(--font-roboto) !important; }
+.font-manrope { font-family: var(--font-manrope) !important; }
+.font-dm-sans { font-family: var(--font-dm-sans) !important; }
+.font-inter { font-family: var(--font-inter) !important; }
+.font-space-grotesk { font-family: var(--font-space-grotesk) !important; }
+.font-sora { font-family: var(--font-sora) !important; }
+.font-outfit { font-family: var(--font-outfit) !important; }
+.font-urbanist { font-family: var(--font-urbanist) !important; }
+
+/* Dark Mode Sections (25% authority ratio) */
+.dark-section, [data-theme="dark"] {
+  --background: #111318;
+  --background-soft: #181C20;
+  --surface: #181C20;
+  --text: #FFFFFF;
+  --text-muted: #A5AEA9;
+  --border: rgba(255, 255, 255, 0.10);
+  background-color: #111318;
+  color: #FFFFFF;
+}
+
+.dark-section h1,
+.dark-section h2,
+.dark-section h3,
+.dark-section h4 {
+  color: #FFFFFF;
+}
+
+.dark-section p {
+  color: #A5AEA9;
+}
+
+/* Primary Button (Green) */
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  background: var(--primary-green);
+  color: #ffffff !important;
+  font-family: var(--font-body);
+  font-weight: 500;
+  padding: 0.75rem 1.6rem;
+  border-radius: var(--radius-full);
+  border: 1px solid var(--primary-green);
+  cursor: pointer;
+  transition: all var(--transition-normal);
+  box-shadow: 0 4px 14px rgba(16, 185, 129, 0.25);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.btn-primary:hover {
+  background: var(--primary-green-dark);
+  border-color: var(--primary-green-dark);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(16, 185, 129, 0.35);
+}
+
+/* Secondary Button (Purple outline) */
+.btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  background: transparent;
+  color: var(--primary-purple) !important;
+  font-family: var(--font-body);
+  font-weight: 500;
+  padding: 0.75rem 1.6rem;
+  border-radius: var(--radius-full);
+  border: 1.5px solid var(--primary-purple);
+  cursor: pointer;
+  transition: all var(--transition-normal);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.btn-secondary:hover {
+  background: var(--primary-purple);
+  color: #ffffff !important;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(109, 40, 217, 0.25);
+}
+
+/* Ghost & Dark Buttons */
+.btn-ghost {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  background: transparent;
+  color: var(--dark);
+  font-family: var(--font-body);
+  font-weight: 500;
+  padding: 0.75rem 1.4rem;
+  border-radius: var(--radius-full);
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition: all var(--transition-normal);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.btn-ghost:hover {
+  background: var(--background-soft);
+  color: var(--primary-purple);
+}
+
+.btn-dark {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  background: var(--dark);
+  color: #ffffff !important;
+  font-family: var(--font-body);
+  font-weight: 500;
+  padding: 0.75rem 1.6rem;
+  border-radius: var(--radius-full);
+  border: 1px solid var(--dark);
+  cursor: pointer;
+  transition: all var(--transition-normal);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.btn-dark:hover {
+  background: var(--dark-soft);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(30, 41, 59, 0.25);
+}
+
+/* Cards */
+.card-modern {
+  background: #FFFFFF;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 2rem;
+  transition: all var(--transition-normal);
+  position: relative;
+  overflow: hidden;
+}
+
+.card-modern:hover {
+  border-color: var(--primary-green);
+  box-shadow: 0 20px 50px rgba(16, 185, 129, 0.10);
+  transform: translateY(-4px);
+}
+
+.card-modern-purple:hover {
+  border-color: var(--primary-purple);
+  box-shadow: 0 20px 50px rgba(109, 40, 217, 0.10);
+  transform: translateY(-4px);
+}
+
+/* Layout Utilities */
+.container-boxed {
+  width: 100%;
+  max-width: 1280px;
+  margin-inline: auto;
+  padding-inline: 1.5rem;
+}
+
+.container-narrow {
+  width: 100%;
+  max-width: 960px;
+  margin-inline: auto;
+  padding-inline: 1.5rem;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--background-soft);
+}
+
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--primary-green);
+}
+
+/* Selection */
+::selection {
+  background-color: rgba(16, 185, 129, 0.25);
+  color: var(--dark);
+}
+
+/* ==========================================================================
+   GSAP ANIMATION UTILITY CLASSES
+   ========================================================================== */
+
+/* Pre-animation state (set via GSAP before scroll triggers) */
+.gsap-hidden {
+  opacity: 0;
+  visibility: hidden;
+}
+
+/* Floating ambient orb animation */
+@keyframes float-slow {
+  0%, 100% { transform: translateY(0px) translateX(0px); }
+  33% { transform: translateY(-18px) translateX(8px); }
+  66% { transform: translateY(8px) translateX(-12px); }
+}
+
+@keyframes float-medium {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-24px) rotate(8deg); }
+}
+
+@keyframes pulse-glow {
+  0%, 100% { opacity: 0.5; transform: scale(1); }
+  50% { opacity: 0.9; transform: scale(1.05); }
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% center; }
+  100% { background-position: 200% center; }
+}
+
+/* Refined geometric spark for pills/badges */
+.pill-spark {
+  width: 11px;
+  height: 11px;
+  display: inline-block;
+  vertical-align: middle;
+  flex-shrink: 0;
+}
+
+/* Shimmer text gradient */
+.text-shimmer {
+  background: linear-gradient(
+    90deg,
+    var(--primary-green) 0%,
+    var(--primary-purple) 30%,
+    var(--primary-green) 60%,
+    var(--primary-purple) 100%
+  );
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: shimmer 4s linear infinite;
+}
+
+/* Ambient floating orb helper */
+.ambient-orb {
+  position: absolute;
+  border-radius: 50%;
+  pointer-events: none;
+  filter: blur(60px);
+  animation: float-slow 8s ease-in-out infinite;
+}
+
+.ambient-orb--green {
+  background: radial-gradient(circle, rgba(16, 185, 129, 0.22) 0%, transparent 70%);
+}
+
+.ambient-orb--purple {
+  background: radial-gradient(circle, rgba(109, 40, 217, 0.18) 0%, transparent 70%);
+  animation: float-medium 10s ease-in-out infinite;
+}
+
+/* Enhanced card hover lift */
+.card-hover-lift {
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+              box-shadow 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.card-hover-lift:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 24px 60px rgba(16, 185, 129, 0.12);
+}
+
+/* Smooth underline link */
+.link-underline {
+  position: relative;
+}
+
+.link-underline::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--primary-green);
+  transition: width 0.3s ease;
+}
+
+.link-underline:hover::after {
+  width: 100%;
+}
+
+/* Premium badge with glow */
+.badge-glow {
+  box-shadow: 0 0 12px rgba(16, 185, 129, 0.4);
+  animation: pulse-glow 3s ease-in-out infinite;
+}
+

@@ -1,0 +1,138 @@
+<!-- Half-Screen Hero Header with header.png -->
+<section class="page-hero" aria-label="Services Page Hero">
+  <img
+    src="assets/images/header.png"
+    alt="ProximaGenTech Engineering Services"
+    class="page-hero__bg"
+    loading="eager"
+    fetchpriority="high"
+  />
+  <div class="page-hero__overlay"></div>
+
+  <div class="page-hero__content">
+    <h1 class="page-hero__title">
+      Ready to Scale Your Systems? <span class="text-brand-green">Let’s Architect Your Next Solution.</span>
+    </h1>
+  </div>
+</section>
+
+<!-- Main Page Content -->
+<div class="services-content-wrapper">
+  <!-- Section 1: Services Grid -->
+  <section class="services-overview-section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-eyebrow">WHAT WE DELIVER</span>
+        <h2 class="section-title">End-to-End Technology Capabilities</h2>
+        <p class="section-desc">
+          From complex distributed backend engines to state-of-the-art autonomous AI agents, we engineer reliable digital products with mathematical rigor and sustainable architecture.
+        </p>
+      </div>
+
+      <div class="services-grid">
+        @for (srv of services; track srv.id) {
+          <div class="service-card" [class.service-card--purple]="srv.accent === 'purple'">
+            <div class="service-card__top">
+              <span class="service-badge">{{ srv.badge }}</span>
+              <div class="service-icon" [class.service-icon--purple]="srv.accent === 'purple'">
+                @switch (srv.icon) {
+                  @case ('code') {
+                    <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <polyline points="16 18 22 12 16 6"></polyline>
+                      <polyline points="8 6 2 12 8 18"></polyline>
+                    </svg>
+                  }
+                  @case ('bot') {
+                    <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <rect x="3" y="11" width="18" height="10" rx="2"></rect>
+                      <circle cx="12" cy="5" r="2"></circle>
+                      <path d="M12 7v4"></path>
+                      <line x1="8" y1="16" x2="8" y2="16"></line>
+                      <line x1="16" y1="16" x2="16" y2="16"></line>
+                    </svg>
+                  }
+                  @case ('cloud') {
+                    <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"></path>
+                    </svg>
+                  }
+                  @case ('data') {
+                    <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <line x1="18" y1="20" x2="18" y2="10"></line>
+                      <line x1="12" y1="20" x2="12" y2="4"></line>
+                      <line x1="6" y1="20" x2="6" y2="14"></line>
+                    </svg>
+                  }
+                  @case ('device') {
+                    <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect>
+                      <line x1="12" y1="18" x2="12.01" y2="18"></line>
+                    </svg>
+                  }
+                  @default {
+                    <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                    </svg>
+                  }
+                }
+              </div>
+            </div>
+
+            <h3 class="service-card__title">{{ srv.title }}</h3>
+            <p class="service-card__desc">{{ srv.desc }}</p>
+
+            <div class="service-card__tags">
+              @for (tag of srv.tags; track tag) {
+                <span class="tag-pill">{{ tag }}</span>
+              }
+            </div>
+          </div>
+        }
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 2: Engineering Process & Methodology -->
+  <section class="process-section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-eyebrow">OUR METHODOLOGY</span>
+        <h2 class="section-title">The Engineering Lifecycle</h2>
+        <p class="section-desc">
+          A disciplined, metrics-driven execution model ensuring technical clarity, rapid sprint cadence, and predictable delivery.
+        </p>
+      </div>
+
+      <div class="process-grid">
+        @for (step of processSteps; track step.number) {
+          <div class="process-card">
+            <span class="process-number">{{ step.number }}</span>
+            <h3 class="process-title">{{ step.title }}</h3>
+            <p class="process-desc">{{ step.desc }}</p>
+          </div>
+        }
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 3: Call-To-Action Banner -->
+  <section class="cta-banner-section">
+    <div class="container">
+      <div class="cta-banner-card">
+        <div class="cta-banner-content">
+          <span class="cta-banner-eyebrow">START A CONVERSATION</span>
+          <h2 class="cta-banner-title">Ready to build your next-generation platform?</h2>
+          <p class="cta-banner-desc">
+            Connect directly with our solutions architects to evaluate requirements, scope system architecture, and map out an execution roadmap.
+          </p>
+        </div>
+        <div class="cta-banner-action">
+          <a routerLink="/contact-us" class="cta-prime-btn">
+            <span>Get In Touch</span>
+            <span class="btn-arrow">&#x2197;</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>

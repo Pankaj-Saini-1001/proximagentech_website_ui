@@ -1,0 +1,51 @@
+<section class="clients-section" aria-label="Clients and Partners">
+  <!-- Section Header -->
+  <div class="clients-header">
+    <p class="clients-label">Trusted by industry leaders across the globe</p>
+  </div>
+
+  <!-- Row 1: Scrolls Right → Left -->
+  <div class="marquee-lane">
+    <div class="marquee-track" #track1>
+      <!-- Render twice for seamless infinite loop -->
+      @for (client of clientsRow1; track client.name) {
+        <div class="client-card">
+          <div class="client-avatar" [style.background]="client.bg" [style.color]="client.color">
+            {{ client.abbr }}
+          </div>
+          <span class="client-name">{{ client.name }}</span>
+        </div>
+      }
+      @for (client of clientsRow1; track client.name + '_clone') {
+        <div class="client-card" aria-hidden="true">
+          <div class="client-avatar" [style.background]="client.bg" [style.color]="client.color">
+            {{ client.abbr }}
+          </div>
+          <span class="client-name">{{ client.name }}</span>
+        </div>
+      }
+    </div>
+  </div>
+
+  <!-- Row 2: Scrolls Left → Right (Reverse) -->
+  <div class="marquee-lane marquee-lane--reverse">
+    <div class="marquee-track" #track2>
+      @for (client of clientsRow2; track client.name) {
+        <div class="client-card client-card--dark">
+          <div class="client-avatar" [style.background]="client.bg" [style.color]="client.color">
+            {{ client.abbr }}
+          </div>
+          <span class="client-name">{{ client.name }}</span>
+        </div>
+      }
+      @for (client of clientsRow2; track client.name + '_clone') {
+        <div class="client-card client-card--dark" aria-hidden="true">
+          <div class="client-avatar" [style.background]="client.bg" [style.color]="client.color">
+            {{ client.abbr }}
+          </div>
+          <span class="client-name">{{ client.name }}</span>
+        </div>
+      }
+    </div>
+  </div>
+</section>
