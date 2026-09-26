@@ -37,7 +37,7 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v4
         with:
-          path: ./dist/proximagentech/browser
+          path: ./dist/proximagentech_website_ui/browser
 
       - name: Deploy
         id: deployment
